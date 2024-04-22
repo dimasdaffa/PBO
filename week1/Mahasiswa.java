@@ -1,34 +1,53 @@
 package week1;
 
-public class Mahasiswa
-{
-    public String nim,nama;
-    public int usia;
-    public Double ipk;
-    
-    public Mahasiswa(String nim, String nama, Double ipk) {
-		this.nim = nim;
-        this.nama = nama;
-        this.ipk = ipk;
-	}
+import java.util.ArrayList;
+import java.util.Iterator;
 
-    public void belajar()
-    {
+import week5.MataKuliah;
+
+public class Mahasiswa {
+
+    private String nim, nama;
+    private ArrayList<Double> nilai = new ArrayList<Double>();
+    private ArrayList<MataKuliah> mk = new ArrayList<MataKuliah>();
+
+    public Mahasiswa(String nim, String nama) {
+        this.nim = nim;
+        this.nama = nama;
+    }
+
+    public void insertNilai(double n1) {
+        nilai.add(n1);
+    }
+
+    public void insertMatkul(String nama, String klp, int sks) {
+        mk.add(new MataKuliah(nama, klp, sks));
+    }
+
+    public void belajar() {
         System.out.println(nama + " belajar");
     }
 
-    public void mainGame()
-    {
+    public void mainGame() {
         System.out.println(nama + " main game");
     }
 
-    public void getIdentitas()
-    {
-        System.out.println("Nama mahasiswa: "+nama);
-        System.out.println("NIM mahasiswa: "+nim);
-        System.out.println("Usia: "+usia);
-        System.out.println("IPK: "+ipk);
+    public void getIdentitas() {
+        System.out.println("Nama mahasiswa: " + nama);
+        System.out.println("NIM mahasiswa: " + nim);
     }
 
+    private void getNilai() {
+        Iterator<Double> it = nilai.iterator(); // looping menggunakan iterator
+        while (it.hasNext()) {
+            System.out.println(it.next());
+        }
+    }
 
+    public void getMataKuliah() {
+        System.out.println("Daftar Mata Kuliah:");
+        for (MataKuliah matkul : mk) {
+            System.out.println(matkul.getMatkul() + "-" + matkul.getKelompok() + "-" + matkul.getSks());
+        }
+    }
 }
