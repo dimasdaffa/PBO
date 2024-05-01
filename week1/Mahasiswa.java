@@ -10,6 +10,7 @@ public class Mahasiswa {
     private String nim, nama, tanggallahir;
     private ArrayList<Double> nilai = new ArrayList<Double>();
     private ArrayList<MataKuliah> mk = new ArrayList<MataKuliah>();
+    
 
     public Mahasiswa(String nim, String nama, String tanggallahir) {
         this.nim = nim;
@@ -19,6 +20,7 @@ public class Mahasiswa {
     public Mahasiswa(String nim, String nama) {
         this.nim = nim;
         this.nama = nama;
+      
 
     }
 
