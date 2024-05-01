@@ -7,7 +7,7 @@ public class Mahasiswa {
     private String nim;
     private int sks;
     private int semester;
-    private double spp; // Declare the spp variable
+    private double spp; 
 
     public Mahasiswa(String nama, String nim, int sks, int semester) {
         this.nama = nama;
@@ -36,15 +36,15 @@ public class Mahasiswa {
         double biayaPerSks = 750000;
         if (semester <= 2) {
             biayaPerSks = 300000;
-            spp = 3000000; // Assign the spp value
+            spp = 3000000; 
         } else if (semester >= 3 && semester <= 6) {
             biayaPerSks = 275000;
-            spp = 2900000; // Assign the spp value
+            spp = 2900000; 
         } else {
             biayaPerSks = 250000;
-            spp = 2750000; // Assign the spp value
+            spp = 2750000; 
         }
-        return sks * biayaPerSks + spp; // Add spp to the total cost
+        return sks * biayaPerSks + spp; 
     }
 
     public static void main(String[] args) {
